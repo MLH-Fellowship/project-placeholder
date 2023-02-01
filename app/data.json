@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "firstName": "Oscar",
+      "lastName": "Rodríguez",
+      "workExperiences": [
+        {
+          "company": "XYZ",
+          "position": "XYZ engineer",
+          "description": "Along with ABC teams, I helped launch DEF and improved GHI metrics by 42%."
+        },
+        {
+          "company": "XYZ",
+          "position": "XYZ engineer",
+          "description": "Along with ABC teams, I helped launch DEF and improved GHI metrics by 42%."
+        }
+      ],
+      "hobbies": [
+        "Programming",
+        "Bouldering",
+        "Movies",
+        "Exercising",
+        "Long walks",
+        "Cooking"
+      ]
+    }
+  ]
+}
