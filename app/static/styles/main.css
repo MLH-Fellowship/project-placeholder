@@ -56,7 +56,7 @@ body {
   grid-template-columns: 0.5fr 1fr 0.7fr;
   color: var(--dark);
   width: 50%;
-  box-shadow: 8px 4px 12px rgba(28, 83, 100, 0.4);
+  box-shadow: 8px 4px 12px rgba(28, 83, 100, 1);
   background-color: var(--yellow);
   margin: calc(var(--margin) * 3) auto;
   padding: calc(var(--padding) * 8) var(--padding);
@@ -67,6 +67,10 @@ body {
   display: inline-block;
   background-color: var(--yellow) !important;
   padding: var(--padding) 0;
+}
+
+.profile-card-col > * {
+  margin-bottom: var(--margin);
 }
 
 .profile-card-col-title {
@@ -92,12 +96,12 @@ body {
   text-align: left;
 }
 
-.profile-card-hobbies-container {
+.profile-card-side-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.profile-card-hobby-pill {
+.profile-card-side-pill {
   color: var(--lightgrey);
   font-size: x-small;
   background-color: chocolate;
@@ -106,6 +110,6 @@ body {
   white-space: nowrap;
 }
 
-.profile-card-hobbies-container > * {
+.profile-card-side-container > * {
   margin: calc(var(--margin) / 3);
 }

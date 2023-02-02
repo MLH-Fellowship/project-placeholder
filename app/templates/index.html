@@ -18,7 +18,7 @@
     />
 
     <link lang="sass" rel="stylesheet" href="/static/styles/main.css" />
-    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
     <title>{{ title }}</title>
   </head>
 
@@ -27,7 +27,7 @@
       <div class="navbar-content">
         <a href="https://fellowship.mlh.io/" target="_blank" rel="noopener">
           <div class="navbar-logo">
-            <img width="200px" src="./static/img/logo.svg" />
+            <img width="200px" src="/static/images/mlh-logo.svg" />
           </div>
         </a>
       </div>
@@ -37,7 +37,11 @@
       <div class="profile-card">
         <div class="profile-card-col">
           <div class="profile-card-intro">
-            <img class="profile-card-intro-image" src="./static/img/logo.jpg" />
+            <img
+              class="profile-card-intro-image"
+              src="{{ user.imagePath }}"
+              onerror="this.src = '/static/images/default-pp.jpg';"
+            />
             <h2>{{ user.firstName }}</h2>
             <h3>{{ user.lastName }}</h3>
           </div>
@@ -54,9 +58,16 @@
         </div>
         <div class="profile-card-col">
           <span class="profile-card-col-title">Hobbies</span>
-          <div class="profile-card-hobbies-container">
+          <div class="profile-card-side-container">
             {% for hobby in user.hobbies %}
-            <div class="profile-card-hobby-pill">{{ hobby }}</div>
+            <div class="profile-card-side-pill">{{ hobby }}</div>
+            {% endfor %}
+          </div>
+          <br />
+          <span class="profile-card-col-title">Programming languages</span>
+          <div class="profile-card-side-container">
+            {% for programmingLanguage in user.programmingLanguages %}
+            <div class="profile-card-side-pill">{{ programmingLanguage }}</div>
             {% endfor %}
           </div>
         </div>

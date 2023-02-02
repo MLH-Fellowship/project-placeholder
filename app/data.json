@@ -3,25 +3,33 @@
     {
       "firstName": "Oscar",
       "lastName": "Rodríguez",
+      "imagePath": "/static/images/oscar-pp-256.jpg",
       "workExperiences": [
         {
-          "company": "XYZ",
-          "position": "XYZ engineer",
-          "description": "Along with ABC teams, I helped launch DEF and improved GHI metrics by 42%."
+          "company": "Google",
+          "position": "Software Engineer Intern",
+          "description": "I built an infrastructure logging system to monitor devex quality. I designed as well quality evaluation metrics."
         },
         {
-          "company": "XYZ",
-          "position": "XYZ engineer",
-          "description": "Along with ABC teams, I helped launch DEF and improved GHI metrics by 42%."
+          "company": "Google",
+          "position": "Software Engineer Intern",
+          "description": "I contributed to a major ongoing migration of complex components inside the Search experience by migrating one of the experiences; cleaned it up, refactored it, and optimized it."
         }
       ],
       "hobbies": [
         "Programming",
+        "Reading",
         "Bouldering",
         "Movies",
         "Exercising",
-        "Long walks",
         "Cooking"
+      ],
+      "programmingLanguages": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "C++",
+        "Rust"
       ]
     }
   ]
