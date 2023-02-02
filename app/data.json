@@ -31,6 +31,36 @@
         "C++",
         "Rust"
       ]
+   
+    },
+    {
+      "firstName": "Anshaal",
+      "lastName": "Hussain",
+      "imagePath": "/static/images/anshaal-pp-256.jpeg",
+      "workExperiences": [
+        {
+          "company": "Augmentr",
+          "position": "Software Engineer Intern",
+          "description": "I collaborated with a team to develop a full stack desktop app using ElectronJS. The app aimed to facillitate cooperation between developers and other remote workers. I worked on integrating the frontend with the backend, as well as improved user experience."
+        },
+        {
+          "company": "Ruh",
+          "position": "Software Engineer Intern",
+          "description": "I contributed to the technical and visual design of a mental wellness mobile app using React Native."
+        }
+      ],
+      "hobbies": [
+        "Coding",
+        "Working out",
+        "Listening to Podcasts",
+        "Drawing",
+        "Cooking"
+      ],
+      "programmingLanguages": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
     }
   ]
 }
