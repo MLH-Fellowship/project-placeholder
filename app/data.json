@@ -62,5 +62,8 @@
         "Python"
       ]
     }
-  ]
+  ],
+  
+  "pages": [{"name": "Home", "url": "http://127.0.0.1:5000/"}, {"name": "Map", "url": "http://127.0.0.1:5000/map"}, {"name": "About Us", "url": "http://127.0.0.1:5000/aboutme"}]
 }
+

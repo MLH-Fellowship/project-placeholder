@@ -11,7 +11,17 @@ app = Flask(__name__)
 def index():
     with open("app/data.json") as file:
         data = json.load(file)
-        return render_template('index.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
+        return render_template('index.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"], pages=data["pages"])
+
+
+@app.route('/map')
+def map():
+    return "MAP SHOULD BE HERE"
+
+
+@app.route('/aboutme')
+def aboutme():
+    return "ABOUT ME"
 
 
 @app.route("/<path:path>")

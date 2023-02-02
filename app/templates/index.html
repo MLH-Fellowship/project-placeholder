@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <!-- Nav bar -->
     <div class="navbar-section">
       <div class="navbar-content">
         <a href="https://fellowship.mlh.io/" target="_blank" rel="noopener">
@@ -30,8 +31,16 @@
             <img width="200px" src="/static/images/mlh-logo.svg" />
           </div>
         </a>
+        <nav>
+          <ul class="nav__links">
+            {% for page in pages %}
+            <li><a href="{{ page.url }}">{{ page.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
       </div>
     </div>
+
     <div class="profile-section">
       {% for user in users %}
       <div class="profile-card">
