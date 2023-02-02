@@ -22,11 +22,21 @@ body {
   width: auto;
 }
 
+#main {
+  z-index: 1;
+}
+
+#background-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 /* Navbar section styles. */
 .navbar-section {
   width: 100%;
   display: inline-block;
-  background-color: var(--blue);
   font-weight: 700 !important;
   padding-top: calc(var(--padding) * 2);
 }
