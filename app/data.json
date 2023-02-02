@@ -61,6 +61,37 @@
         "TypeScript",
         "Python"
       ]
+    },
+    {
+      "firstName": "Laura",
+      "lastName": "Penza",
+      "imagePath": "/static/images/laura-pp-256.jpg",
+      "workExperiences": [
+        {
+          "company": "Florida International University",
+          "position": "Undergraduate Reseracher",
+          "description": "I conducted in-depth analysis of modern attack models and attribution tools, with a focus on induced graph techniques, to uncover new insights and improve cyber defense strategies."
+        },
+        {
+          "company": "Florida International University",
+          "position": "Data Structures Teaching Assistant",
+          "description": " I assist students with class assignments, lead study sessions, hold office hours, grade exams, and provide feedback to improve understanding surrounding data structures and algorithms."
+        }
+      ],
+      "hobbies": [
+        "Programming",
+        "Reading",
+        "Cooking",
+        "Embroidering",
+        "Yoga",
+        "Hanging out with my dog"
+      ],
+      "programmingLanguages": [
+        "Java",
+        "Python",
+        "Golang",
+        "JavaScript"
+      ]
     }
   ]
 }
