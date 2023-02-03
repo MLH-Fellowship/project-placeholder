@@ -55,9 +55,10 @@ body {
 .profile-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: calc(var(--padding) * 5) 0;
+  overflow: scroll;
+  height: 85vh;
 }
 
 /* Card styles */
