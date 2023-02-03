@@ -31,7 +31,6 @@
         "C++",
         "Rust"
       ]
-   
     },
     {
       "firstName": "Anshaal",
@@ -90,6 +89,33 @@
         "Java",
         "Python",
         "Golang",
+        "JavaScript"
+      ]
+    },
+    {
+      "firstName": "Fernanda",
+      "lastName": "De León",
+      "imagePath": "/static/images/fernanda-pp-256.jpg",
+      "workExperiences": [
+        {
+          "company": "MLH",
+          "position": "MLH Prep Fellow",
+          "description": "I built a group portfolio with Javascript and SCSS through Jekyll and Ruby and a weather app using ReactJS and OpenWeatherMap API and GeoDB API to retrieve forecast and geolocation."
+        },
+        {
+          "company": "Google",
+          "position": "Software Product Sprint",
+          "description": "I worked along Google engineers to learn web development and build an end-to-end application focused on promoting mental health and battling Impostor Syndrome for college students and minorities by monitoring their day-to-day emotional state and providing tips."
+        }
+      ],
+      "hobbies": [
+        "Walking my dog",
+        "Italian food",
+        "Lifting weights"
+      ],
+      "programmingLanguages": [
+        "C++",
+        "Python",
         "JavaScript"
       ]
     }
