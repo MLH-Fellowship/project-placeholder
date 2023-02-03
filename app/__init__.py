@@ -14,9 +14,9 @@ def index():
         return render_template('index.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
 
-// TODO: implement /map route
+# TODO: implement /map route
 
-// TODO: implement /aboutme route
+# TODO: implement /aboutme route
 
 
 @app.route("/<path:path>")
