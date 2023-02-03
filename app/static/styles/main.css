@@ -22,11 +22,21 @@ body {
   width: auto;
 }
 
+#main {
+  z-index: 1;
+}
+
+#background-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
 /* Navbar section styles. */
 .navbar-section {
   width: 100%;
   display: inline-block;
-  background-color: var(--blue);
   font-weight: 700 !important;
   padding-top: calc(var(--padding) * 2);
 }
@@ -78,9 +88,10 @@ color: var(--yellow)
 .profile-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: calc(var(--padding) * 5) 0;
+  overflow: scroll;
+  height: 85vh;
 }
 
 /* Card styles */
@@ -122,6 +133,7 @@ color: var(--yellow)
 .profile-card-intro-image {
   border-radius: 20%;
   width: 128px;
+  height: 128px;
 }
 
 .profile-card-work-container {
