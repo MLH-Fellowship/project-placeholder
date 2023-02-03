@@ -57,17 +57,17 @@ body {
   height: 60px;
 }
 
-.nav__links {
+.nav-links {
   list-style: none;
 }
 
-.nav__links li {
+.nav-links li {
   display: inline-block;
   padding: 0px 20px;
 }
 
 
-.nav__links li a:hover {
+.nav-links li a:hover {
 
 color: var(--yellow)
 }
