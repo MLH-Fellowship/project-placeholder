@@ -61,8 +61,18 @@ window.addEventListener("resize", () => {
 /**
  * Animation cycle.
  */
+let rotateFactor = 1;
+document.getElementById("profile-section").addEventListener("scroll", () => {
+  rotateFactor = 20;
+  setTimeout(() => (rotateFactor = 1), 0);
+});
+
 (function tick() {
-  points.rotateOnAxis(new THREE.Vector3(0.1, 0.1, 0.1), -0.001);
+  const rotateCoeff = 0.1 * rotateFactor;
+  points.rotateOnAxis(
+    new THREE.Vector3(rotateCoeff, rotateCoeff, rotateCoeff),
+    -0.001
+  );
   renderer.render(scene, camera);
   window.requestAnimationFrame(tick);
 })();
