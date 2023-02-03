@@ -41,6 +41,22 @@ body {
   padding-top: calc(var(--padding) * 2);
 }
 
+.navbar-section li a {
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+
+  color: var(--lightgrey);
+
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 4%;
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -50,6 +66,23 @@ body {
 .navbar-content .navbar-logo {
   height: 60px;
 }
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+
+.nav-links li a:hover {
+
+color: var(--yellow)
+}
+
+
 
 /* Profile section styles */
 .profile-section {
