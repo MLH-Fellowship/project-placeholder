@@ -14,14 +14,9 @@ def index():
         return render_template('index.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"], pages=data["pages"])
 
 
-@app.route('/map')
-def map():
-    return "MAP SHOULD BE HERE"
+// TODO: implement /map route
 
-
-@app.route('/aboutme')
-def aboutme():
-    return "ABOUT ME"
+// TODO: implement /aboutme route
 
 
 @app.route("/<path:path>")
