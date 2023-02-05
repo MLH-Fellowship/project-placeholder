@@ -15,6 +15,10 @@ def index():
 
 
 # TODO: implement /map route
+@app.route('/map')
+def map_view():
+    return render_template('map.html')
+
 
 # TODO: implement /aboutme route
 
