@@ -99,6 +99,7 @@ color: var(--yellow)
   font-size: 24px;
   color: var(--lightgrey);
   font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(28, 83, 100, 1);
 }
 
 #map {

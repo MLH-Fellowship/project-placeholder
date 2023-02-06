@@ -18,7 +18,7 @@
 
     <link lang="sass" rel="stylesheet" href="/static/styles/main.css" />
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
-    <title>{{ title }}</title>
+    <title>About Me</title>
   </head>
   <body>
     <div id="main">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div id="profile-section" class="profile-section">
-        <h1 class="header">Meet The Placeholders!</h1>
+        <h1 class="header">About Us</h1>
         {% for user in users %}
         <div class="profile-card">
           <div class="profile-card-col">
@@ -55,30 +55,16 @@
             </div>
           </div>
           <div class="profile-card-col">
-            <span class="profile-card-col-title">Top work experiences</span>
-            {% for workExperience in user.workExperiences %}
-            <div class="profile-card-work-container">
-              <h4>{{ workExperience.company }}</h4>
-              <h5>{{ workExperience.position }}</h5>
-              <p><i>{{ workExperience.description }}</i></p>
-            </div>
-            {% endfor %}
+            <span class="profile-card-col-title">About Me</span>
+
+            <p><i>{{ user.aboutme }}</i></p>
           </div>
           <div class="profile-card-col">
-            <span class="profile-card-col-title">Hobbies</span>
-            <div class="profile-card-side-container">
-              {% for hobby in user.hobbies %}
-              <div class="profile-card-side-pill">{{ hobby }}</div>
-              {% endfor %}
-            </div>
-            <br />
-            <span class="profile-card-col-title">Programming languages</span>
-            <div class="profile-card-side-container">
-              {% for programmingLanguage in user.programmingLanguages %}
-              <div class="profile-card-side-pill">
-                {{ programmingLanguage }}
-              </div>
-              {% endfor %}
+            <span class="profile-card-col-title">Education</span>
+
+            <div class="profile-card-work-container">
+              <h5>{{ user.education.school }}</h5>
+              <p><i>{{ user.education.major }}</i></p>
             </div>
           </div>
         </div>
