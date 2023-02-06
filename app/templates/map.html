@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Map</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATf82OOtEqqBNC4_lCp_f2GPFceQg-GeQ"></script>
-  <style>
-    #map {
-      height: 650px;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <h1>Where Have We Been?</h1>
-  <div id="map"></div>
+  <head>
+    <title>Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATf82OOtEqqBNC4_lCp_f2GPFceQg-GeQ"></script>
+    <style>
+      #map {
+        height: 650px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Where Have We Been?</h1>
+    <div id="map"></div>
 
-  <script>
-    function initMap() {
-      var locations = [
-          ['Laura', 40.8517746, 14.2681244],
-          ['Laura', 25.7616798, -80.1917902],
-          ['Laura', 39.4567083, -77.9638365],
-          ['Laura', 39.4820919, -77.3367294],
-          ['Laura', 29.375859, 47.9774052],
-          ['Laura', 23.6345005, -102.5527878],
-          ['Laura', 25.03428, -77.3962784]
+    <script>
+      function initMap() {
+        var locations = [
+          ["Laura", 40.8517746, 14.2681244],
+          ["Laura", 25.7616798, -80.1917902],
+          ["Laura", 39.4567083, -77.9638365],
+          ["Laura", 39.4820919, -77.3367294],
+          ["Laura", 29.375859, 47.9774052],
+          ["Laura", 23.6345005, -102.5527878],
+          ["Laura", 25.03428, -77.3962784],
+          ["Anshaal", 30.26189, -97.747949],
+          ["Anshaal", 43.6007, -79.6445],
+          ["Anshaal", 28.5329, -81.3816],
         ];
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById("map"), {
           zoom: 3,
           center: new google.maps.LatLng(41.385063, 2.173403),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
         });
 
         var infowindow = new google.maps.InfoWindow();
@@ -39,14 +42,14 @@
         for (i = 0; i < locations.length; i++) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
+            map: map,
           });
 
           google.maps.event.addListener(
             marker,
-            'click',
-            (function(marker, i) {
-              return function() {
+            "click",
+            (function (marker, i) {
+              return function () {
                 infowindow.setContent(locations[i][0]);
                 infowindow.open(map, marker);
               };
@@ -54,9 +57,11 @@
           );
         }
       }
-  </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATf82OOtEqqBNC4_lCp_f2GPFceQg-GeQ&callback=initMap">
-  </script>
-</body>
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATf82OOtEqqBNC4_lCp_f2GPFceQg-GeQ&callback=initMap"
+    ></script>
+  </body>
 </html>
