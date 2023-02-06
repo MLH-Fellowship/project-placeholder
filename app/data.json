@@ -23,7 +23,9 @@
         "Drawing",
         "Cooking"
       ],
-      "programmingLanguages": ["JavaScript", "TypeScript", "Python"]
+      "programmingLanguages": ["JavaScript", "TypeScript", "Python"],
+      "aboutme": "I come from a psychology background and transitioned into software development afterwards by attending Lighthouse Labs (A.K.A. the hardest, most rewarding 12 weeks of my life!) I'm passionate about the field of software development, design. In my free time, I enjoy making digital art, reading about cognitive psychology, or playing PC games, and RPGs. I currently am searching for any internships or employment opportunity!",
+      "education": {"major": "Psychology and CS", "school": "University of Toronto"}
     },
     {
       "firstName": "Laura",
@@ -49,7 +51,9 @@
         "Yoga",
         "Hanging out with my dog"
       ],
-      "programmingLanguages": ["Java", "Python", "Golang", "JavaScript"]
+      "programmingLanguages": ["Java", "Python", "Golang", "JavaScript"],
+      "aboutme": "{ABOUT ME}",
+      "education": {"major": "{MAJOR}", "school": "{SCHOOL}"}
     },
     {
       "firstName": "Fernanda",
@@ -68,7 +72,9 @@
         }
       ],
       "hobbies": ["Walking my dog", "Italian food", "Lifting weights"],
-      "programmingLanguages": ["C++", "Python", "JavaScript"]
+      "programmingLanguages": ["C++", "Python", "JavaScript"],
+      "aboutme": "{ABOUT ME}",
+      "education": {"major": "{MAJOR}", "school": "{SCHOOL}"}
     },
     {
       "firstName": "Oscar",
@@ -100,7 +106,9 @@
         "Python",
         "C++",
         "Rust"
-      ]
+      ],
+      "aboutme": "{ABOUT ME}",
+      "education": {"major": "{MAJOR}", "school": "{SCHOOL}"}
     }
   ]
 }

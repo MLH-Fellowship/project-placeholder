@@ -14,13 +14,16 @@ def index():
         return render_template('index.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
 
-# TODO: implement /map route
 @app.route('/map')
 def map_view():
     return render_template('map.html')
 
 
-# TODO: implement /aboutme route
+@app.route('/aboutme')
+def aboutme():
+    with open("app/data.json") as file:
+        data = json.load(file)
+        return render_template('aboutme.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
 
 @app.route("/<path:path>")
