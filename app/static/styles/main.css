@@ -83,6 +83,29 @@ color: var(--yellow)
 }
 
 
+/* Map styles */
+.map-section {
+  color: var(--dark);
+  width: 50%;
+  box-shadow: 8px 4px 12px rgba(28, 83, 100, 1);
+  background-color: var(--yellow);
+  margin: calc(var(--margin) * 3) auto;
+  padding: var(--padding);
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.header {
+  text-align: center;
+  font-size: 24px;
+  color: var(--lightgrey);
+  font-weight: 500;
+}
+
+#map {
+  height: 450px;
+  width: 100%;
+}
+
 
 /* Profile section styles */
 .profile-section {
