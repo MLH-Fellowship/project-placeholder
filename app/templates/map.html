@@ -35,7 +35,7 @@
           </a>
           <nav>
             <ul class="nav-links">
-              <li><a href="http://127.0.0.1:5000/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/aboutme">About Us</a></li>
               <li><a href="/map">Map</a></li>
             </ul>
@@ -62,13 +62,13 @@
             ["Laura", 25.03428, -77.3962784],
             ["Anshaal", 30.26189, -97.747949],
             ["Anshaal", 43.6007, -79.6445],
-            ["Anshaal", 28.5329, -81.3816],
+            ["Anshaal", 28.5329, -81.3816]
           ];
 
           var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 3,
             center: new google.maps.LatLng(41.385063, 2.173403),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
           });
 
           var infowindow = new google.maps.InfoWindow();
@@ -81,7 +81,7 @@
                 locations[i][1],
                 locations[i][2]
               ),
-              map: map,
+              map: map
             });
 
             google.maps.event.addListener(
