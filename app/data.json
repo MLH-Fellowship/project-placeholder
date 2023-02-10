@@ -52,8 +52,8 @@
         "Hanging out with my dog"
       ],
       "programmingLanguages": ["Java", "Python", "Golang", "JavaScript"],
-      "aboutme": "{ABOUT ME}",
-      "education": {"major": "{MAJOR}", "school": "{SCHOOL}"}
+      "aboutme": "Hello there! My name is Laura Penza and I'm an aspiring software engineer driven by a passion for using technology to drive scientific progress. My background in mathematics and interest in the aerospace and quantum computing sectors attracted me to this field, where I have been fascinated by the limitless potential of technology. My journey began back in 2019 when a special someone sparked my curiosity and introduced me to the world of coding.",
+      "education": {"major": "Computer Science & Natural/Applied Science", "school": "Florida International University"}
     },
     {
       "firstName": "Fernanda",
