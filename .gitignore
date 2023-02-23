@@ -1,7 +1,6 @@
 venv
 .venv
 __pycache__
-http-cacache
 *.pyc
 .env
 python3-virtualenv
