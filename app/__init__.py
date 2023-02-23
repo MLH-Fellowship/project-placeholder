@@ -3,7 +3,6 @@ import json
 
 from flask import Flask, render_template, request
 from peewee import MySQLDatabase
-from playhouse.shortcuts import model_to_dict
 
 from app.database.lib import Database
 from app.database.models.post import Post
@@ -38,22 +37,3 @@ def aboutme():
 @app.route("/<path:path>")
 def catch_all(path):
     return render_template("404.html", path=path)
-
-
-@app.route("/api/create_post", methods=["POST"])
-def create_post():
-    payload = request.get_json()
-    name = payload['name']
-    email = payload['email']
-    content = payload['content']
-    post = Post.create(name=name, email=email, content=content)
-
-    return model_to_dict(post)
-
-
-@app.route("/api/get_posts", methods=["GET"])
-def get_posts():
-    found_posts = Post.select().order_by(Post.created_at.desc())
-    posts = [model_to_dict(p) for p in found_posts]
-
-    return { "posts": posts }
