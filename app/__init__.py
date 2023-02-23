@@ -1,19 +1,21 @@
 import os
 import json
-
 from flask import Flask, render_template, request
+from dotenv import load_dotenv
 from peewee import MySQLDatabase
 
-from app.database.lib import Database
-from app.database.models.post import Post
-
-
+load_dotenv()
 app = Flask(__name__)
-database = Database.get_instance()
+mysql_db = MySQLDatabase(
+    os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+);
 
-database.connect()
-database.create_tables([Post])
-print(database.get_tables())
+print(mysql_db)
+
 
 @app.route('/')
 def index():
