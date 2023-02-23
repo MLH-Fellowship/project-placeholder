@@ -14,6 +14,7 @@ database = Database.get_instance()
 
 database.connect()
 database.create_tables([Post])
+print(database.get_tables())
 
 @app.route('/')
 def index():
@@ -34,18 +35,20 @@ def aboutme():
         return render_template('aboutme.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
 
-@app.route('/timeline')
-def timeline_view():
-    return render_template('timeline.html')
+@app.route("/<path:path>")
+def catch_all(path):
+    return render_template("404.html", path=path)
 
 
 @app.route("/api/create_post", methods=["POST"])
 def create_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    payload = request.get_json()
+    name = payload['name']
+    email = payload['email']
+    content = payload['content']
     post = Post.create(name=name, email=email, content=content)
-    return redirect("/timeline")
+
+    return model_to_dict(post)
 
 
 @app.route("/api/get_posts", methods=["GET"])
@@ -60,8 +63,3 @@ def get_posts():
 def delete_posts():
     Post.delete().execute()
     return redirect("/api/get_posts")
-
-
-@app.route("/<path:path>")
-def catch_all(path):
-    return render_template("404.html", path=path)
