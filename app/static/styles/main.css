@@ -79,7 +79,7 @@ body {
 
 .nav-links li a:hover {
 
-  color: var(--yellow)
+color: var(--yellow)
 }
 
 
@@ -137,7 +137,7 @@ body {
   padding: var(--padding);
 }
 
-.profile-card-col>* {
+.profile-card-col > * {
   margin-bottom: var(--margin);
 }
 
@@ -179,27 +179,6 @@ body {
   white-space: nowrap;
 }
 
-.profile-card-side-container>* {
+.profile-card-side-container > * {
   margin: calc(var(--margin) / 3);
-}
-
-.container-posts {
-  width: 50%;
-  height: 85vh;
-  overflow: scroll;
-  margin-top: var(--margin);
-}
-
-.container-posts>* {
-  margin-bottom: var(--margin);
-}
-
-.container-post {
-  background-color: var(--lightgrey);
-  border-radius: calc(var(--border-radius) / 3);
-  padding: calc(var(--padding) * .75) var(--padding);
-}
-
-.container-post:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
