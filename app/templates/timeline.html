@@ -42,6 +42,7 @@
       <div id="profile-section" class="profile-section">
         <h1 class="header">Timeline</h1>
 
+        <!-- Input Form -->
         <div>
           <form id="form">
             <label for="fname">name:</label><br />
@@ -53,6 +54,8 @@
             <button type="submit">Submit</button>
           </form>
         </div>
+        <!-- Timeline Posts -->
+        <div id="timeline-posts"></div>
       </div>
     </div>
     <canvas id="background-canvas"></canvas>
@@ -65,6 +68,44 @@
   <script type="module" src="/static/js/particles.js"></script>
 
   <script>
+    addEventListener("load", (e) => {
+      // Prevent default behavior:
+      e.preventDefault();
+
+      // Get request using Fetch:
+      fetch("http://localhost:5000/api/timeline_post", {
+        method: "GET",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data", data);
+
+          document.getElementById("timeline-posts").innerHTML = "";
+
+          for (let item in data.timeline_posts) {
+            console.log("ITEM", data.timeline_posts[item].content);
+
+            let contentDiv =
+              "<h2>" + data.timeline_posts[item].content + "<h2>";
+
+            let nameDiv = "<h2>" + data.timeline_posts[item].name + "<h2>";
+
+            let createdAtDiv =
+              "<h2>" + data.timeline_posts[item].created_at + "<h2>";
+
+            let emailDiv = "<h2>" + data.timeline_posts[item].email + "<h2>";
+
+            document.getElementById("timeline-posts").innerHTML += contentDiv;
+
+            document.getElementById("timeline-posts").innerHTML += nameDiv;
+
+            document.getElementById("timeline-posts").innerHTML += emailDiv;
+
+            document.getElementById("timeline-posts").innerHTML += createdAtDiv;
+          }
+        });
+    });
+
     const form = document.getElementById("form");
     form.addEventListener("submit", function (e) {
       // Prevent default behavior:
@@ -74,11 +115,10 @@
       // Post the payload using Fetch:
       fetch("http://localhost:5000/api/timeline_post", {
         method: "POST",
-        headers: { "Access-Control-Allow-Origin": "*" },
         body: payload,
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then((data) => console.log("data", data));
     });
   </script>
 </html>
