@@ -48,6 +48,13 @@ def aboutme():
         return render_template('aboutme.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
 
+@app.route('/timeline')
+def timeline():
+    with open("app/data.json") as file:
+        data = json.load(file)
+        return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), users=data["users"])
+
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
