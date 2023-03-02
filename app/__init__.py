@@ -1,4 +1,4 @@
-from peewee import Model, MySQLDatabase, CharField, TextField, DateTimeField
+from peewee import Model, MySQLDatabase, SqliteDatabase, CharField, TextField, DateTimeField
 
 import os
 import json
@@ -10,14 +10,20 @@ from playhouse.shortcuts import model_to_dict
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                     user=os.getenv('MYSQL_USER'),
-                     password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"),
-                     port=3306
-                     )
+if os.getenv("TESTING") == 'true':
+    print("running in testing mode...")
+    mydb = SqliteDatabase("file:memory?mode=memory&cache=shared", uri=True)
+else:
+    print("running in production mode...")
+    mydb = MySQLDatabase(
+        os.getenv("MYSQL_DATABASE"),
+        user=os.getenv('MYSQL_USER'),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306
+    )
 
-# Create Database table
+
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -27,8 +33,10 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
+
 mydb.connect()
 mydb.create_tables([TimelinePost])
+
 
 @app.route('/')
 def index():
@@ -48,9 +56,11 @@ def aboutme():
         data = json.load(file)
         return render_template('aboutme.html', title="Week 1 - Team Portfolio", url=os.getenv("URL"), users=data["users"])
 
+
 @app.route('/timeline')
 def timeline():
     return render_template('timeline.html', title='Timeline')
+
 
 @app.route("/<path:path>")
 def catch_all(path):
@@ -70,15 +80,18 @@ def post_time_line_post():
     return redirect("/timeline")
 
 # Create GET /api/timeline_post
+
+
 @app.route('/api/get_timeline_post', methods=['GET'])
 def get_time_line_post():
     return {
-        'timeline_posts' : [
+        'timeline_posts': [
             model_to_dict(p)
             for p in
-    TimelinePost.select().order_by(TimelinePost.created_at.desc())
+            TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
 
 @app.route('/api/delete_timeline_posts', methods=['DELETE'])
 def delete_time_line_posts():
