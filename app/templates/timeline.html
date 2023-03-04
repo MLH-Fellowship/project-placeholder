@@ -18,8 +18,9 @@
 
     <link lang="sass" rel="stylesheet" href="/static/styles/main.css" />
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
-    <title>About Me</title>
+    <title>MLH Timeline</title>
   </head>
+
   <body>
     <div id="main">
       <!-- Nav bar -->
@@ -35,41 +36,23 @@
               <li><a href="/">Home</a></li>
               <li><a href="/aboutme">About Us</a></li>
               <li><a href="/map">Map</a></li>
-              <li><a href="/timeline">Timeline</a></li>
+              <li><a href="/map">Timeline</a></li>
             </ul>
           </nav>
         </div>
       </div>
       <div id="profile-section" class="profile-section">
-        <h1 class="header">About Us</h1>
-        {% for user in users %}
-        <div class="profile-card">
-          <div class="profile-card-col">
-            <div class="profile-card-intro">
-              <img
-                class="profile-card-intro-image"
-                src="{{ user.imagePath }}"
-                onerror="this.src = '/static/images/default-pp.jpg';"
-              />
-              <h2>{{ user.firstName }}</h2>
-              <h3>{{ user.lastName }}</h3>
-            </div>
-          </div>
-          <div class="profile-card-col">
-            <span class="profile-card-col-title">About Me</span>
-
-            <p><i>{{ user.aboutme }}</i></p>
-          </div>
-          <div class="profile-card-col">
-            <span class="profile-card-col-title">Education</span>
-
-            <div class="profile-card-work-container">
-              <h5>{{ user.education.school }}</h5>
-              <p><i>{{ user.education.major }}</i></p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
+        <form
+          name="timeline_post"
+          action="/api/create_timeline_post"
+          method="post"
+        >
+          <input name="name" type="text" placeholder="Title" />
+          <input name="email" type="email" placeholder="Insert e-mail" />
+          <input name="content" type="text" placeholder="Post something" />
+          <input type="submit" value="Submit" />
+        </form>
+        <div id="container-posts" class="container-posts"></div>
       </div>
     </div>
     <canvas id="background-canvas"></canvas>
@@ -80,4 +63,26 @@
     src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
   ></script>
   <script type="module" src="/static/js/particles.js"></script>
+  <script>
+    const containerPosts = document.getElementById("container-posts");
+    async function getPosts() {
+      const payload = await fetch("/api/get_timeline_post");
+      const {timeline_posts: posts} = await payload.json();
+      posts.forEach((post) => {
+        const postContainer = document.createElement("div");
+        const postName = document.createElement("h4");
+        const postEmail = document.createElement("p");
+        const postContent = document.createElement("p");
+        postName.innerText = post.name;
+        postEmail.innerText = post.email;
+        postContent.innerText = post.content;
+        postContainer.classList.add("container-post");
+        postContainer.appendChild(postName);
+        postContainer.appendChild(postEmail);
+        postContainer.appendChild(postContent);
+        containerPosts.appendChild(postContainer);
+      });
+    }
+    getPosts();
+  </script>
 </html>
