@@ -25,7 +25,7 @@ services:
       - CERTBOT_EMAIL=name@example.com
     ports:
       - 80:80
-      -443:443
+      - 443:443
     volumes:
       - nginx_secrets:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
