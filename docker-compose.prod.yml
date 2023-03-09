@@ -16,10 +16,22 @@ services:
     restart: always
     env_file:
       - .env
+
+  ngix:
+    container_name: ngix
+    image: jonasal/ngix-certbot
+    restart: always
+    environment:
+      - CERTBOT_EMAIL=name@example.com
     ports:
-      - 5001:5000
+      - 80:80
+      -443:443
     volumes:
-      - .:/tmp
+      - ngix_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/ngix/user_conf.d
+    depends_on:
+      - projectplaceholder
 
 volumes:
   projectplaceholderdb:
+  ngix_secrets:
