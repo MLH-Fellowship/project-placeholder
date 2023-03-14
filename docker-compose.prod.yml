@@ -10,6 +10,7 @@ services:
       - projectplaceholderdb:/var/lib/mysql
 
   projectplaceholder:
+    container_name: projectplaceholder
     depends_on:
       - mysql
     build: .
@@ -22,7 +23,7 @@ services:
     image: jonasal/nginx-certbot
     restart: always
     environment:
-      - CERTBOT_EMAIL=name@example.com
+      - CERTBOT_EMAIL=fernanda.-deleon@hotmail.com
     ports:
       - 80:80
       - 443:443
