@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
-TESTING=true
+export TESTING=true
 ${PWD}/venv/bin/python -m unittest -v
