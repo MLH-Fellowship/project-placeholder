@@ -15,12 +15,10 @@ if os.getenv("TESTING") == "true":
     print("Running in test mode")
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
 else:
-    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                         user=os.getenv("MYSQL_USER"),
-                         password=os.getenv("MYSQL_PASSWORD"),
-                         host=os.getenv("MYSQL_HOST"),
-                         port=3306
-                         )
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"), user=os.getenv(
+        "MYSQL_USER"), password=os.getenv("MYSQL_PASSWORD"), host=os.getenv("MYSQL_HOST"), port=3306)
+
+print(mydb)
 
 
 class TimelinePost(Model):
@@ -66,9 +64,27 @@ def timeline():
 @app.route('/api/timeline_post', methods=['POST'])
 @cross_origin()
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    # Try and retrieve the 'name' field from the request form
+    try:
+        name = request.form['name']
+    # If it doesn't exist, KeyError will be raised and we'll return an error
+    except KeyError:
+        return 'Invalid name', 400
+
+    try:
+        content = request.form['content']
+        if content == "" or content == None:
+            return 'Invalid content', 400
+    except:
+        return 'Invalid content', 400
+
+    try:
+        email = request.form['email']
+        if "@" not in email and "." not in email or email == "" or email == None or len(email) < 3:
+            return 'Invalid email', 400
+    except:
+        return 'Invalid email', 400
+
     timeline_post = TimelinePost.create(
         name=name, email=email, content=content)
 
