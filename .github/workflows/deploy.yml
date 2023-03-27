@@ -22,5 +22,5 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             ls repos
-            sh ~/repos/project-placeholder/app/scripts/redeployw5.sh
+            sh repos/project-placeholder/app/scripts/redeployw5.sh
             docker compose ps
