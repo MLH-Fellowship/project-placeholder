@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/repos/project-placeholder;
+cd repos/project-placeholder;
 
 # make sure the git repo inside VPS has lastest changes
 git stash && git switch main && git fetch --all && git reset --hard origin/main;
