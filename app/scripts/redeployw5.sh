@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # cd into your project folder
-cd ~/repos/project-placeholder;
+cd repos/project-placeholder;
 
 # make sure the git repo inside VPS has lastest changes
 git fetch && git reset origin/main --hard;
