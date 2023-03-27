@@ -1,7 +1,6 @@
 name: Deploy project
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -18,5 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
-            sh repos/project-placeholder/app/scripts/redeployw5.sh
+            sh ~/repos/project-placeholder/app/scripts/redeploy.sh
             docker compose ps
