@@ -4,7 +4,7 @@
 # Docker Container Deployment:
 
 # cd into your project folder
-cd "~/repos/project-placeholder";
+# cd "~/repos/project-placeholder";
 
 # make sure the git repo inside VPS has the latest changes from main
 git fetch && git reset origin/main --hard
