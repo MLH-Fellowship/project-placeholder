@@ -5,6 +5,7 @@
 
 # cd into your project folder
 cd "~/project-placeholder";
+# can remove all containers and images with prune
 
 # make sure the git repo inside VPS has the latest changes from main
 git fetch && git reset origin/main --hard
