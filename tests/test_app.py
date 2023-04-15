@@ -30,7 +30,9 @@ class AppTestCase(unittest.TestCase):
         # TEST POST REQUEST
         data = {'name': 'Laura Doe', 'email': 'Laura@example.com',
                 'content': 'This is a test post'}
+        print("before POST request")
         response = self.client.post("/api/timeline_post", data=data)
+        print("response", response)
         assert response.status_code == 200
         # TEST GET REQUEST
         response = self.client.get("/api/timeline_post")
