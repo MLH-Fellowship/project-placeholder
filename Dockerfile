@@ -4,7 +4,7 @@
 
 FROM python:3.9-slim-buster
 
-WORKDIR /project-placeholder
+WORKDIR /anshaal-project-placeholder
 
 COPY requirements.txt .
 
