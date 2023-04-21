@@ -18,7 +18,6 @@ class AppTestCase(unittest.TestCase):
         # TEST HOMEPAGE: Verifying that the homepage contains specific content
         assert "Meet The Placeholders!" in html
         assert 'href="/aboutme"' in html
-        print('Laura Penza')
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
@@ -34,13 +33,14 @@ class AppTestCase(unittest.TestCase):
         # response = self.client.post("/api/timeline_post", data=data)
         # print("response", response)
         # assert response.status_code == 200
+
         # TEST GET REQUEST
         response = self.client.get("/api/timeline_post")
         assert response.status_code == 200
         assert response.is_json
         json = response.get_json()
         assert "timeline_posts" in json
-        # assert len(json["timeline_posts"]) == 1
+        # assert len(json["timeline_posts"]) >= 1
 
         # TEST TIMELINE PAGE
         response = self.client.get("/timeline")
